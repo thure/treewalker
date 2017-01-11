@@ -12,14 +12,18 @@
 
 		function traverse(childnode) {
 
-			if (childnode[child].length == 0) {
-				cb(childnode);
-				return;
-			}
+			if(childnode[child]){
+			
+				if (childnode[child].length == 0) {
+					cb(childnode);
+					return;
+				}
 
-			for (var j = 0; j < childnode[child].length; j++) {
-				cb(childnode);
-				traverse(childnode[child][j]);
+				for (var j = 0; j < childnode[child].length; j++) {
+					cb(childnode);
+					traverse(childnode[child][j]);
+				}
+				
 			}
 
 		}
